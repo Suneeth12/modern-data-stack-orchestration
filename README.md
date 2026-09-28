@@ -72,3 +72,6 @@ modern-data-stack-orchestration/
 and scheduling, and Great Expectations for the test suite — on Snowflake,
 BigQuery, or DuckDB. The structure (staging → marts, tests as gates, a DAG) is
 identical.
+
+## 👤 Author
+**Suneeth Reddy Peddamallu** — [GitHub](https://github.com/Suneeth12) • [Portfolio](https://suneeth.live) • [LinkedIn](https://linkedin.com/in/suneeth-reddy-peddamallu)
