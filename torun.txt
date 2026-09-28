@@ -1,0 +1,23 @@
+HOW TO RUN — Modern Data Stack: Orchestrated Analytics Engineering
+==================================================================
+
+1. Install dependencies:
+       pip install -r requirements.txt
+
+2. Generate the (deliberately dirty) raw source tables:
+       python3 src/generate_data.py
+
+3. Run the orchestrated pipeline (ingest -> staging -> marts, with tests):
+       python3 src/pipeline.py
+
+Outputs:
+   reports/lineage.png      — the pipeline DAG (models in green, tests in orange)
+   reports/run_report.json  — execution order, per-task status/timing,
+                              data-quality results, and the final region mart
+
+Or just run everything:  ./run.sh
+
+Note: the DAG orchestrator (src/orchestrator.py), dbt-style SQL models, and
+Great-Expectations-style tests (src/quality.py) are implemented from scratch on
+a local SQLite warehouse (stdlib). Production swap: dbt + Airflow/Dagster +
+Great Expectations on a real warehouse (Snowflake/BigQuery/DuckDB).
